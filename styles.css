@@ -1,27 +1,29 @@
-/* inter-regular - latin */
+/* === FONTS === */
+
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; 
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/inter-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('assets/fonts/inter-v20-latin-regular.woff2');
 }
-/* inter-700 - latin */
+
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; 
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/inter-v20-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('assets/fonts/inter-v20-latin-700.woff2') format('woff2'); 
 }
-/* inter-800 - latin */
+
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; 
   font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
-  src: url('../fonts/inter-v20-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('assets/fonts/inter-v20-latin-800.woff2') format('woff2'); 
 }
+
 
 /* === CSS RESET === */
 
@@ -51,12 +53,6 @@ figure, blockquote, dl, dd {
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
-}
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  line-height: 1.5;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -100,4 +96,80 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
+
+:root {
+  /* == COLOR PALLETTE == */
+
+  /* Primary Color */
+  --clr-soft-orange: hsl(35, 77%, 62%);
+  --clr-soft-red: hsl(5, 85%, 63%);
+  
+  /* Neutral Colors */
+  --clr-off-white: hsl(36, 100%, 99%);
+  --clr-grayish-blue: hsl(233, 8%, 79%);
+  --clr-dark-grayish-blue: hsl(236, 13%, 42%);
+  --clr-very-dark-blue: hsl(240, 100%, 5%);
+  
+  /* == TYPOGRAPHY == */
+
+  /* font family */
+  --ff-body: 'Inter', sans-serif;
+
+  /* font size */
+  --fs-paragraph: 0.9375rem;
+
+  /* font weights */
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fw-bolder: 800;
+
+  /* Spacing */
+  --space-sr:  0.0625rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xlg: 2.5rem;
+  --space-xxlg: 3rem;
+}
+
+
+/* === Accessibility Checks  === */
+
+/*@media (prefers-reduced-motion: reduce) {
+  nav a, nav a::after, .nav__bar a, .bar, .overlay, .article__card, .article__title--link {
+    transition: none;
+  }
+}*/
+
+/*@media (hover: hover) {
+  nav a:hover { color: var(--dark-blue); }
+  nav a:hover::after { opacity: 1; transform: scaleX(1); }
+  .btn:hover { opacity: 0.75; }
+  .article__card:hover {transform: scale(1.1);}
+  .article__title--link:hover{color: var(--clr-green-500);}
+  .footer__nav a:hover { color: var(--clr-green-500); }
+}*/
+
+/* === Base styles === */
+
+body {
+  min-height: 100svh;
+  line-height: 1.5;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  height: 4rem;
+  width: 100%;
+  background: var(--clr-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(var(--space-md), 5vw, 6rem);
+  box-shadow: 0 var(--space-sr) 0  rgba(0,0,0,0.07);
+  z-index: 200;
+}
+
 
