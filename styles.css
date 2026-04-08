@@ -125,6 +125,8 @@ textarea:not([rows]) {
 
   /* Spacing */
   --space-sr:  0.0625rem;
+  --space-xxs: 0.125rem;
+  --space-vs: 1.625rem;
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
@@ -156,6 +158,7 @@ textarea:not([rows]) {
 body {
   min-height: 100svh;
   line-height: 1.5;
+  background: var(--clr-off-white);
 }
 
 header {
@@ -163,13 +166,44 @@ header {
   top: 0;
   height: 4rem;
   width: 100%;
-  background: var(--clr-white);
+  background: var(--clr-off-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 clamp(var(--space-md), 5vw, 6rem);
-  box-shadow: 0 var(--space-sr) 0  rgba(0,0,0,0.07);
+  /*box-shadow: 0 var(--space-sr) 0  rgba(0,0,0,0.07);*/
   z-index: 200;
+}
+
+.logo {
+  display: block;
+  width: 2rem;
+  height: 1.5rem;
+}
+
+.menu--btn {
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 200;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bar {
+  display: block;
+  width: var(--space-vs);
+  height: var(--space-xxs);
+  background: var(--clr-very-dark-blue);
+  border-radius: var(--space-xxs);
+  transition: transform 0.3s ease;
+  transform-origin: center;
 }
 
 
