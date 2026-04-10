@@ -14,33 +14,39 @@
 
   <body>
 
-    <header>
-      <div class="logo--container">
-        <img class="logo" src="assets/icons/logo.svg" alt="" width="65" height="40">
+    <header class="header">
+      <div class="header__logo">
+        <img class="header__logo--image" src="assets/icons/logo.svg" alt="" width="65" height="40">
       </div>
 
-      <nav class="nav__bar" aria-labelledby="Header navigation">
-        <a href="#">Home</a>
-        <a href="#">New</a>
-        <a href="#">Popular</a>
-        <a href="#">Trending</a>
-        <a href="#">Categories</a>
+      <nav class="nav__links" aria-label="Header navigation">
+        <ul class="nav__links--group">
+          <li><a href="#" class="nav__links--link">Home</a></li>
+          <li><a href="#" class="nav__links--link">New</a></li>
+          <li><a href="#" class="nav__links--link">Popular</a></li>
+          <li><a href="#" class="nav__links--link">Trending</a></li>
+          <li><a href="#" class="nav__links--link">Categories</a></li>
+        </ul>
+        
       </nav>
 
-      <button type="button" class="menu--btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="menuOverlay">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+      <button type="button" class="nav__toggle" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="menuOverlay">
+        <span class="nav__toggle--bar"></span>
+        <span class="nav__toggle--bar"></span>
+        <span class="nav__toggle--bar"></span>
       </button>
     </header>
-
-    <div class="overlay" id="menuOverlay" role="dialog" aria-label="Navigation menu"></div>
+    
+    <div class="backdrop" id="backdrop"></div>
+    <div class="overlay" id="menuOverlay" role="dialog" aria-label="Navigation menu">
+      
+    </div>
 
     <main class="main__content">
       <section class="hero">
         <div class="hero__inner">
-          <div class="hero__image">
-            <picture>
+          <div class="hero__visual">
+            <picture class="hero__visual--image">
               <source media="(min-width:48rem)" srcset="assets/images/image-web-3-desktop.jpg">
               <img src="assets/images/image-web-3-mobile.jpg" alt="">
             </picture>
@@ -50,11 +56,11 @@
             <h1 class="hero__title">The Bright Future of Web 3.0?</h1>
 
             <div class="hero__body">
-              <p>
+              <p class="hero__body--text" id="heroBodyText">
                 We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?
               </p>
 
-              <button type="button" class="hero__btn" id="heroBtn">READ MORE</button>
+              <button type="button" class="hero__btn" id="heroBtn" aria-controls="heroBodyText" aria-expanded="false" aria-describedby="Click to read more">READ MORE</button>
             </div>
           </div>
 
@@ -63,7 +69,7 @@
 
       <aside class="side__bar" aria-label="New articles">
 
-        <h2>New</h2>
+        <h2 class="side__bar--heading">New</h2>
         
         <div class="side__bar--item">
           <h3 class="side__bar--title">
