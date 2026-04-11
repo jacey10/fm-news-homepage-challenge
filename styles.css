@@ -345,22 +345,23 @@ header {
 
   .nav__links {
     position: static;
-    inset: unset;
-    background: transparent;
+    width: auto;
+    height: auto;
+    background: none;
     translate: 0 0;
+    padding: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    flex-direction: row;
   }
 
-  .nav__links--group {
+  .nav__links ul {
     flex-direction: row;
     gap: 2rem;
   }
 
   .nav__links a {
+    font-size: 1.2rem;
     flex-direction: row;
   }
   
