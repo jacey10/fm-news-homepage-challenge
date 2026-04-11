@@ -8,7 +8,13 @@
   font-display: swap; 
 }
 
-
+@font-face {
+  font-family: 'Inter';
+  src: url('assets/fonts/inter-v20-latin-600.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; 
+}
 
 @font-face {
   font-family: 'Inter';
@@ -122,6 +128,7 @@ textarea:not([rows]) {
 
   /* font weights */
   --fw-regular: 400;
+  --fw-medium: 500;
   --fw-bold: 700;
   --fw-bolder: 800;
 
@@ -213,7 +220,7 @@ header {
 .nav__links a {
   text-decoration: none;
   font-size: clamp(1rem, 1.5vw, 2rem);
-  font-weight: var(--fw-regular);
+  font-weight: var(--fw-medium);
   color: var(--clr-very-dark-blue);
   display: flex;
   flex-direction: column;
@@ -283,40 +290,6 @@ header {
   opacity: 1;
   pointer-events: all;
 }
-
-/*.overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  transform: translateX(100%);
-  width: 75vw;
-  height: 100svh;
-  background: var(--clr-off-white);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  z-index: 100;
-}
-
-.overlay.open {
-  transform: translateX(0);
-  opacity: 1;
-  pointer-events: all;
-}
-
-.overlay.open .nav__links, .nav__links--group {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  padding: 5rem 1.5rem;
-}
-
-.overlay.open .nav__links a {
-  font-size: clamp(1rem, 1.5vw, 2rem);
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
-}*/
 
 .hero__visual {
   width: 100%;
