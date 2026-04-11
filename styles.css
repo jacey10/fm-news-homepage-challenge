@@ -174,7 +174,6 @@ header {
   justify-content: space-between;
   padding: 0;
   /*box-shadow: 0 var(--space-sr) 0  rgba(0,0,0,0.07);*/
-  z-index: 10;
 }
 
 .header__logo--image {
@@ -184,7 +183,20 @@ header {
 }
 
 .nav__links {
-  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100svh;
+  background: var(--clr-off-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  translate: 100% 0;
+  transition: translate 0.3s ease;
+  padding: 6rem 1.5rem;
+  z-index: 300;
 }
 
 .nav__links ul {
@@ -192,16 +204,16 @@ header {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
   gap: 1.5rem;
 }
 
 .nav__links a {
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.5vw, 2rem);
   color: var(--clr-very-dark-blue);
-  position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   transition: color 0.2s;
 }
 
@@ -209,11 +221,14 @@ header {
   color: var(--clr-soft-red);
 }
 
+.nav__links.is-open {
+  translate: 0 0;
+}
+
 .nav__toggle {
   position: absolute;
   top: 1.4rem;
   right: -0.1rem;
-  z-index: 200;
   background: none;
   border: none;
   outline: none;
@@ -225,6 +240,7 @@ header {
   gap: 0.25rem;
   padding: 0.25rem;
   -webkit-tap-highlight-color: transparent;
+  z-index: 400;
 }
 
 .nav__toggle--bar {
@@ -235,19 +251,18 @@ header {
   border-radius: var(--space-xxs);
   transition: transform 0.3s ease;
   transform-origin: center;
-  z-index: 200;
 }
 
-.nav__toggle.open .nav__toggle--bar:nth-child(1) {
+.nav__toggle.is-open .nav__toggle--bar:nth-child(1) {
   transform: translateY(0.4375rem) rotate(45deg);
 }
 
-.nav__toggle.open .nav__toggle--bar:nth-child(2) {
+.nav__toggle.is-open .nav__toggle--bar:nth-child(2) {
   opacity: 0;
   transform: scaleX(0);
 }
 
-.nav__toggle.open .nav__toggle--bar:nth-child(3) {
+.nav__toggle.is-open .nav__toggle--bar:nth-child(3) {
   transform: translateY(-0.4375rem) rotate(-45deg);
 }
 
@@ -255,19 +270,18 @@ header {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 10;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+  z-index: 200;
 }
 
-.backdrop.active {
+.backdrop.is-open {
   opacity: 1;
   pointer-events: all;
-  z-index: 10;
 }
 
-.overlay {
+/*.overlay {
   position: fixed;
   top: 0;
   right: 0;
@@ -299,7 +313,7 @@ header {
   font-size: clamp(1rem, 1.5vw, 2rem);
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
-}
+}*/
 
 .hero__visual {
   width: 100%;
@@ -330,15 +344,27 @@ header {
 @media screen and (min-width:48rem) {
 
   .nav__links {
-    display: block;
+    position: static;
+    inset: unset;
+    background: transparent;
+    translate: 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
   }
 
   .nav__links--group {
     flex-direction: row;
+    gap: 2rem;
+  }
+
+  .nav__links a {
+    flex-direction: row;
   }
   
-
-  .nav__toggle, .overlay, .backdrop {
+  .nav__toggle, .backdrop {
     display: none;
   }
 }
