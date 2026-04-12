@@ -169,7 +169,7 @@ body {
   line-height: 1.5;
   background: var(--clr-off-white);
   font-family: var(--ff-body);
-  padding: 0 1rem;
+  padding: 0 1rem 4rem;
 }
 
 header {
@@ -291,6 +291,10 @@ header {
   pointer-events: all;
 }
 
+.main__content {
+  width: 100%;
+}
+
 .hero__visual {
   width: 100%;
 }
@@ -310,8 +314,111 @@ header {
 
 .hero__title {
   color: var(--clr-very-dark-blue);
+  font-size: clamp(2.6rem, 8vw, 6rem);
   font-weight: var(--fw-bolder);
-  line-height: 1.3;
+  line-height: 1.1;
+  margin-block-end: 0.5rem;
+}
+
+.hero__body--text {
+  color: var(--clr-dark-grayish-blue);
+  font-size: clamp(var(--fs-paragraph), 2vw, 2rem);
+  margin-block-end: 1rem;
+}
+
+.hero__btn {
+  all: unset;
+  background: var(--clr-soft-red);
+  color: var(--clr-very-dark-blue);
+  font-size: 1em;
+  font-weight: var(--fw-bold);
+  padding: 0.5em 1.5em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  margin-block-end: 2rem;
+}
+
+.side__bar {
+  background: var(--clr-very-dark-blue);
+  padding: 2rem 1rem 1rem;
+  margin-block-end: 3rem;
+}
+
+.side__bar--heading {
+  color: var(--clr-soft-orange);
+}
+
+.side__bar--item {
+  padding-block: 1.5rem;
+}
+
+.side__bar--item:not(:last-child) {
+  border-bottom: 0.5px solid var(--clr-grayish-blue);
+}
+
+.side__bar--item:last-child {
+  padding-block-end: 0;
+}
+
+.side__bar--title {
+  margin-block-end: 0.5rem;
+}
+
+.side__bar--link {
+  color: var(--clr-off-white);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.side__bar--text {
+  color: var(--clr-grayish-blue);
+  font-size: clamp(var(--fs-paragraph), 2vw, 2rem);
+}
+
+.trending {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.trending__item {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+
+.trending__image--container {
+  width: auto;
+  height: 8rem;
+}
+
+.trending__image--container img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+}
+
+.trending__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.trending__number {
+  color: var(--clr-soft-red);
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+}
+
+.trending__link {
+  color: var(--clr-very-dark-blue);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.trending__text {
+  color: var(--clr-dark-grayish-blue);
+  font-size: clamp(var(--fs-paragraph), 2vw, 2rem);
 }
 
 
