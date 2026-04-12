@@ -187,8 +187,8 @@ header {
 
 .header__logo--image {
   display: block;
-  width: 2rem;
-  height: 1.5rem;
+  width: clamp(2rem, 4vw, 4rem);
+  height: clamp(1.5rem, 3vw, 4rem);
 }
 
 .nav__links {
@@ -322,8 +322,8 @@ header {
 
 .hero__body--text {
   color: var(--clr-dark-grayish-blue);
-  font-size: clamp(var(--fs-paragraph), 2vw, 2rem);
-  margin-block-end: 1rem;
+  font-size: clamp(var(--fs-paragraph), 1.3vw, 2rem);
+  margin-block-end: clamp(1rem, 1.6vw, 2rem);
 }
 
 .hero__btn {
@@ -368,6 +368,7 @@ header {
 .side__bar--link {
   color: var(--clr-off-white);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .side__bar--link:hover {
@@ -393,7 +394,7 @@ header {
 
 .trending__image--container {
   width: auto;
-  height: 8rem;
+  height: clamp(8rem, 10vw, 15rem);
 }
 
 .trending__image--container img {
@@ -418,6 +419,7 @@ header {
   color: var(--clr-very-dark-blue);
   font-size: 1rem;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .trending__link:hover {
@@ -426,11 +428,21 @@ header {
 
 .trending__text {
   color: var(--clr-dark-grayish-blue);
-  font-size: clamp(var(--fs-paragraph), 2vw, 2rem);
+  font-size: clamp(var(--fs-paragraph), 1.1vw, 2rem);
 }
 
 
 @media screen and (min-width:48rem) {
+
+  body {
+    display: grid;
+    place-items: center;
+    padding: 4rem 8rem;
+  }
+
+  .header {
+    padding-block: 3rem 5rem;
+  }
 
   .nav__links {
     position: static;
@@ -460,6 +472,7 @@ header {
 
   .main__content {
     display: grid;
+    place-items: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto 1fr auto;
     gap: 1.5rem;
@@ -470,8 +483,11 @@ header {
     "trending trending trending";
   }
 
-  .hero {grid-area: hero;}
-  .side__bar {grid-area: aside;}
+  .hero { grid-area: hero;}
+  .side__bar {
+    grid-area: aside;
+    align-self: stretch;
+  }
   .trending {
     grid-template-columns: subgrid;
     grid-area: trending;
@@ -479,8 +495,14 @@ header {
 
   .hero__content {
     display: grid;
+    place-items: center;
     grid-template-columns: 1fr 1fr;
+    padding-block: 0.5rem;
   }
-}
 
+  .hero__body--text {
+    padding-block: 0.5rem;
+  }
+
+}
 
