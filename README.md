@@ -29,14 +29,14 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-![](./screenshot.jpg)
+![](./assets/images/screenshots/newsHPdesktop.png)
+![](./assets/images/screenshots/nesHPmobile.png)
 
 
 ### Links
 
-- Solution URL: (https://your-solution-url.com)
-- Live Site URL: (https://your-live-site-url.com)
+- Solution URL: (https://github.com/jacey10/fm-news-homepage-challenge)
+- Live Site URL: (https://jacey10.github.io/fm-news-homepage-challenge/)
 
 ## My process
 
@@ -47,45 +47,23 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+- I learned how to transform nav into an overlay (for mobile) and how to restore it back to normal for desktop.
+- I applied grid-template-areas and subgrid for the first time. It was easy to implement and worked efficiently.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- I'd learn how to use React to build this project next time.
 
 
 ### AI Collaboration
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
-
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
+- I used Claude and Qwen AI to debug overlay issues and stacking context issues.
+- I also used them to brainstorm solutions.
+- I basically got ideas from their suggestions whicch worked well for me. For intance, Claude suggested that to solve stacking context (backdrop covering overlay), I should remove give the backdrop a lower z-index but that didn't solve it because the header whuch contains the menu-overlay already has a lower z-index. So, I tried putting the backdrop div into the header. Now, it sits as a sibling next to the menu-overlay. So, giving the menu-overlay a higher z-index solved the stacking problem.
 
 
 ## Author
