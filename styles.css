@@ -102,7 +102,7 @@ textarea:not([rows]) {
 
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
-  scroll-margin-block: 5ex;
+  scroll-margin-block-start: 5rem;
 }
 
 :root {
@@ -150,6 +150,12 @@ textarea:not([rows]) {
 @media (prefers-reduced-motion: reduce) {
   .nav__links a, .side__bar--link, .trending__link {
     transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
