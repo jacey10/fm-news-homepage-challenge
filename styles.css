@@ -211,6 +211,7 @@ header {
   transition: translate 0.3s ease;
   padding: 6rem 1.5rem;
   z-index: 300;
+  isolation: isolate;
 }
 
 .nav__links ul {
