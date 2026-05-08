@@ -63,7 +63,7 @@ Users should be able to:
 
 - I used Claude and Qwen AI to debug overlay issues and stacking context issues.
 - I also used them to brainstorm solutions.
-- I basically got ideas from their suggestions whicch worked well for me. For intance, Claude suggested that to solve stacking context (backdrop covering overlay), I should remove give the backdrop a lower z-index but that didn't solve it because the header whuch contains the menu-overlay already has a lower z-index. So, I tried putting the backdrop div into the header. Now, it sits as a sibling next to the menu-overlay. So, giving the menu-overlay a higher z-index solved the stacking problem.
+- I basically got ideas from their suggestions which worked well for me. For intance, Claude suggested that to solve stacking context (backdrop covering overlay), I should remove give the backdrop a lower z-index but that didn't solve it because the header whuch contains the menu-overlay already has a lower z-index. So, I tried putting the backdrop div into the header. Now, it sits as a sibling next to the menu-overlay. So, giving the menu-overlay a higher z-index solved the stacking problem.
 
 
 ## Author
